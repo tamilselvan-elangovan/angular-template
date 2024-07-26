@@ -1,0 +1,13 @@
+// @use 'sass:map';
+// @use '@angular/material' as mat;
+// @use '../assets/styles/palette.scss' as palette;
+
+.theme-container {
+    position: relative;
+
+    .theme-selector {
+        position: absolute;
+        right: 20px;
+        top: 20px
+    }
+}
