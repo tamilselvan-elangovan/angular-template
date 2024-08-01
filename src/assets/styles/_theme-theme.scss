@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  .th_pri_50 {
+    color: mat.get-theme-color($theme, primary, 50);
+  }
+
+  .th_pri_500 {
+    color: mat.get-theme-color($theme, primary, 500);
+  }
+}
+
+@mixin theme($theme) {
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+}

@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+@use './colors' as *;
+@use './theme-theme' as themes;
+
+@include mat.core();
+
+// Apply the light theme by default
+@include mat.all-component-themes($light-theme);
+
+html{
+  @include themes.theme($light-theme);
+}
+
+:has(#color-scheme option[value="light"]:checked) {
+  @include mat.all-component-colors($light-theme);
+}
+
+:has(#color-scheme option[value="dark"]:checked) {
+  @include mat.all-component-colors($dark-theme);
+}
+
+:has(#color-scheme option[value="system"]:checked) {
+  @media (prefers-color-scheme: dark) {
+    @include mat.all-component-colors($dark-theme);
+  }
+
+  @media (prefers-color-scheme: light) {
+    @include mat.all-component-colors($light-theme);
+  }
+}
