@@ -1,13 +1,24 @@
 // @use 'sass:map';
-// @use '@angular/material' as mat;
-// @use '../assets/styles/palette.scss' as palette;
+@use '@angular/material' as mat;
+@use '../styles' as style;
 
 .theme-container {
     position: relative;
+    z-index: 2;
 
     .theme-selector {
         position: absolute;
         right: 20px;
         top: 20px
     }
+}
+
+// .my-text {
+//     color: mat.get-theme-color(style.$theme, foreground, text);
+//     background-color: mat.get-theme-color(style.$theme, background, background);
+// }
+
+.my-text {
+    color: var(--mat-app-text-color);
+    background-color: var(--mat-app-background-color);
 }
